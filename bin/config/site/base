@@ -1,0 +1,5 @@
+#资产资源路径
+"AssetsDirectory" : "./assets/",
+#静态路径
+"StaticDirectory" : "static",
+"CheckRight" : true

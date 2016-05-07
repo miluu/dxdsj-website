@@ -1,0 +1,6 @@
+"mgo_admin_dns": "mongodb://127.0.0.1:27017/dxdsj-admin",
+"mgo_admin_mode": "strong",
+"mgo_admin_refresh": true,
+"mgo_dns": "mongodb://127.0.0.1:27017/dxdsj",
+"mgo_mode": "strong",
+"mgo_refresh": true
