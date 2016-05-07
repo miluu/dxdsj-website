@@ -37,3 +37,6 @@ _testmain.go
 /bin/log/*
 /pkg/
 /bin/assets/static/theme/default/img/newspics/
+
+build
+node_modules

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="keywords" content="关键字">
+  <meta name="description" content="描述">
+  <link href="favicon.ico" type="image/x-icon" rel="icon">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/calendar.css">
+  <title>calendar</title>
+</head>
+<body>
+  <div class="header">
+    <div class="wrap">
+      <div class="logo">
+        <a href="">
+          <img src="../img/pic/logo.png">
+        </a>
+      </div>
+      <div class="nav">
+        <ul>
+          <li class="active"><a href="/html/index.html">首　页</a></li>
+          <li><a href="/html/calendar.html">财经日历</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix" style="height: 40px;"></div>
+
+  <div class="content wrap">
+    <div class="calendar-row1 clearfix">
+      <div class="l">
+        <div class="c-head">
+          <h3 class="icon icon-date">按照日期查询</h3>
+        </div>
+        <div class="c-body">
+          <div class="searchbox">
+            <input id="searchbox" name="searchbox" readonly="readonly" type="text" class="textdate" onclick="WdatePicker({dateFmt:'yyyy年MM月dd日',onpicked:toDate})" value="2016年05月05日">
+            <div class="buttondate" onclick="WdatePicker({el:'searchbox',dateFmt:'yyyy年MM月dd日',onpicked:toDate})">选择日期</div>
+          </div>
+        </div>
+      </div>
+      <div class="r">
+        <div class="week week-pre icon-arr-left">
+          <a href="">上一周</a>
+        </div>
+        <div class="week-item">
+          <a href="">
+            <span>周一</span><br>
+            <span>05/02</span>
+          </a>
+        </div>
+        <div class="week-item">
+          <a href="">
+            <span>周二</span><br>
+            <span>05/02</span>
+          </a>
+        </div>
+        <div class="week-item">
+          <a href="">
+            <span>周三</span><br>
+            <span>05/02</span>
+          </a>
+        </div>
+        <div class="week-item">
+          <a href="">
+            <span>周四</span><br>
+            <span>05/02</span>
+          </a>
+        </div>
+        <div class="week-item">
+          <a href="">
+            <span>周五</span><br>
+            <span>05/02</span>
+          </a>
+        </div>
+        <div class="week-item">
+          <a href="">
+            <span>周六</span><br>
+            <span>05/02</span>
+          </a>
+        </div>
+        <div class="week-item">
+          <a href="">
+            <span>周日</span><br>
+            <span>05/02</span>
+          </a>
+        </div>
+        <div class="week week-next icon-arr-right">
+          <a href="">上一周</a>
+        </div>
+      </div>
+    </div>
+    <div class="calendar-row2 clearfix mt20">
+      <div class="c-head">
+        <h3 class="icon icon-currency">按照国家/地区条件查询</h3>
+      </div>
+      <div class="clearfix">
+        <div class="panel-2 col col-1 j-filter-panel">
+          <div class="panel-head">
+            <h3>选择</h3>
+            <a class="more j-more"></a>
+          </div>
+          <div class="panel-body">
+            <ul class="filter-list j-filter-list">
+              <li>
+                <a href=""><span class="icon icon-all"></span>全部</a>
+              </li>
+              <li>
+                <a href=""><span class="icon icon-imp"></span>重要</a>
+              </li>
+              <li class="j-hide hide">
+                <a href=""><span class="icon icon-today"></span>今日</a>
+              </li>
+              <li class="j-hide hide">
+                <a href=""><span class="icon icon-will"></span>未公布</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel-2 col col-1 j-filter-panel">
+          <div class="panel-head">
+            <h3>美洲</h3>
+            <a class="more j-more"></a>
+          </div>
+          <div class="panel-body">
+            <ul class="filter-list j-filter-list">
+              <li>
+                <a href=""><span class="icon icon-meiguo"></span>美国</a>
+              </li>
+              <li>
+                <a href=""><span class="icon icon-janada"></span>加拿大</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel-2 col col-1 j-filter-panel">
+          <div class="panel-head">
+            <h3>欧洲</h3>
+            <a class="more j-more"></a>
+          </div>
+          <div class="panel-body">
+            <ul class="filter-list j-filter-list">
+              <li>
+                <a href=""><span class="icon icon-ouyuanqu"></span>欧元区</a>
+              </li>
+              <li>
+                <a href=""><span class="icon icon-deguo"></span>德国</a>
+              </li>
+              <li class="j-hide hide">
+                <a href=""><span class="icon icon-yingguo"></span>英国</a>
+              </li>
+              <li class="j-hide hide">
+                <a href=""><span class="icon icon-faguo"></span>法国</a>
+              </li>
+              <li class="j-hide hide">
+                <a href=""><span class="icon icon-ruishi"></span>瑞士</a>
+              </li>
+              <li class="j-hide hide">
+                <a href=""><span class="icon icon-yidali"></span>意大利</a>
+              </li>
+              <li class="j-hide hide">
+                <a href=""><span class="icon icon-xibanya"></span>西班牙</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel-2 col col-2 j-filter-panel">
+          <div class="panel-head">
+            <h3>亚洲及澳洲</h3>
+            <a class="more j-more"></a>
+          </div>
+          <div class="panel-body">
+            <ul class="filter-list j-filter-list">
+              <li>
+                <a href=""><span class="icon icon-zhongguo"></span>中国</a>
+              </li>
+              <li>
+                <a href=""><span class="icon icon-aodaliya"></span>澳大利亚</a>
+              </li>
+              <li>
+                <a href=""><span class="icon icon-riben"></span>日本</a>
+              </li>
+              <li class="j-hide hide">
+                <a href=""><span class="icon icon-hanguo"></span>韩国</a>
+              </li>
+              <li class="j-hide hide">
+                <a href=""><span class="icon icon-xinxilan"></span>新西兰</a>
+              </li>
+              <li class="j-hide hide">
+                <a href=""><span class="icon icon-yindu"></span>印度</a>
+              </li>
+              <li class="j-hide hide">
+                <a href=""><span class="icon icon-xianggang"></span>香港</a>
+              </li>
+              <li class="j-hide hide">
+                <a href=""><span class="icon icon-taiwan"></span>台湾地区</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="calendar-row2 clearfix mt20">
+      <div class="c-head">
+        <h3 class="icon icon-date">2016-05-05 经济数据一览</h3>
+      </div>
+      <div class="c-body">
+        <table class="table-data">
+          <thead>
+            <tr>
+              <th>时间</th>
+              <th>国家/地区</th>
+              <th>指标名称</th>
+              <th>重要性</th>
+              <th>前值</th>
+              <th>预测值</th>
+              <th>公布值</th>
+              <th>影响</th>
+              <th>解读</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>07:01</td>
+              <td><img src="../img/pic/gq/中国.png" alt="中国"></td>
+              <td class="tl">英国4月BRC商店物价指数年率</td>
+              <td><img src="../img/pic/star3.png"></td>
+              <td>-1.7%</td>
+              <td>-1.7%</td>
+              <td>-1.7%</td>
+              <td><span class="yingxiang2 yx-wyx">影响较小</span></td>
+              <td><a href="" class="xq icon-news"></a></td>
+            </tr>
+            <tr>
+              <td class="text-red">07:01</td>
+              <td><img src="../img/pic/gq/中国.png" alt="中国"></td>
+              <td class="tl text-red">英国4月BRC商店物价指数年率</td>
+              <td><img src="../img/pic/star3.png"></td>
+              <td class="text-red">-1.7%</td>
+              <td class="text-red">-1.7%</td>
+              <td class="text-red">-1.7%</td>
+              <td class="text-red"><span class="yingxiang2 yx-wyx-imp">影响较小</span></td>
+              <td><a href="" class="xq icon-news-red"></a></td>
+            </tr>
+            <tr>
+              <td>07:01</td>
+              <td><img src="../img/pic/gq/中国.png" alt="中国"></td>
+              <td class="tl">英国4月BRC商店物价指数年率</td>
+              <td><img src="../img/pic/star3.png"></td>
+              <td>-1.7%</td>
+              <td>-1.7%</td>
+              <td>-1.7%</td>
+              <td><span class="yingxiang2 yx-likong">利空 英镑 金银</span></td>
+              <td><a href="" class="xq icon-news"></a></td>
+            </tr>
+            <tr>
+              <td>07:01</td>
+              <td><img src="../img/pic/gq/中国.png" alt="中国"></td>
+              <td class="tl">英国4月BRC商店物价指数年率</td>
+              <td><img src="../img/pic/star3.png"></td>
+              <td>-1.7%</td>
+              <td>-1.7%</td>
+              <td>-1.7%</td>
+              <td><span class="yingxiang2 yx-liduo">利多 英镑 </span></td>
+              <td><a href="" class="xq icon-news"></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="calendar-row2 clearfix mt20">
+      <div class="c-head">
+        <h3 class="icon icon-mic">2016-05-05 财经大事一览</h3>
+      </div>
+      <div class="c-body">
+        <table class="table-data">
+          <thead>
+            <tr>
+              <th width="50">时间</th>
+              <th width="100">国家/地区</th>
+              <th width="100">城市</th>
+              <th width="100">重要性</th>
+              <th>事件</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>07:01</td>
+              <td>美国</td>
+              <td>罗契斯特</td>
+              <td><img src="../img/pic/star3.png"></td>
+              <td>
+                <div class="clearfix shijian">
+                  <img src="../img/pic/维斯科.png" width="40" height="40">
+                  <p>The State of the Union 2016年年会召开，意大利央行行长维斯科、欧盟委员会主席容克、欧洲理事会主席图斯克及欧洲议会议长舒尔茨将参加。</p>
+                </div>
+              </td>
+            </tr>
+            <tr class="text-red">
+              <td class="text-red">07:01</td>
+              <td>美国</td>
+              <td>罗契斯特</td>
+              <td><img src="../img/pic/star3.png"></td>
+              <td>
+                <div class="clearfix shijian">
+                  <img src="../img/pic/维斯科.png" width="40" height="40">
+                  <p>The State of the Union 2016年年会召开，意大利央行行长维斯科、欧盟委员会主席容克、欧洲理事会主席图斯克及欧洲议会议长舒尔茨将参加。</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>07:01</td>
+              <td>美国</td>
+              <td>罗契斯特</td>
+              <td><img src="../img/pic/star3.png"></td>
+              <td>
+                <div class="clearfix shijian">
+                  <img src="../img/pic/维斯科.png" width="40" height="40">
+                  <p>The State of the Union 2016年年会召开，意大利央行行长维斯科、欧盟委员会主席容克、欧洲理事会主席图斯克及欧洲议会议长舒尔茨将参加。</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>07:01</td>
+              <td>美国</td>
+              <td>罗契斯特</td>
+              <td><img src="../img/pic/star3.png"></td>
+              <td>
+                <div class="clearfix shijian">
+                  <img src="../img/pic/维斯科.png" width="40" height="40">
+                  <p>The State of the Union 2016年年会召开，意大利央行行长维斯科、欧盟委员会主席容克、欧洲理事会主席图斯克及欧洲议会议长舒尔茨将参加。</p>
+                </div>
+              </td>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="calendar-row2 clearfix mt20">
+      <div class="c-head">
+        <h3 class="icon icon-mic">2016-05-05 假期休市一览</h3>
+      </div>
+      <div class="c-body">
+        <table class="table-data">
+          <thead>
+            <tr>
+              <th width="100">时间</th>
+              <th width="100">国家/地区</th>
+              <th width="150">市场</th>
+              <th width="100">节日名称</th>
+              <th>详细安排</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>05-05</td>
+              <td>美国</td>
+              <td>东京证券交易所</td>
+              <td>儿童节</td>
+              <td class="tl">休市一日</td>
+            </tr>
+            <tr class="text-red">
+              <td class="text-red">05-05</td>
+              <td>美国</td>
+              <td>东京证券交易所</td>
+              <td>儿童节</td>
+              <td class="tl">休市一日</td>
+            </tr>
+            <tr>
+              <td>05-05</td>
+              <td>美国</td>
+              <td>东京证券交易所</td>
+              <td>儿童节</td>
+              <td class="tl">休市一日</td>
+            </tr>
+            <tr>
+              <td>05-05</td>
+              <td>美国</td>
+              <td>东京证券交易所</td>
+              <td>儿童节</td>
+              <td class="tl">休市一日</td>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="wrap">
+      <div class="logo">
+        <img src="../img/pic/bottom-logo.png">
+      </div>
+      <div class="text">
+        <p>Copyright © 2013 - 2016 Jin10.com All Rights Reserved </p>
+        <p>金十数据 粤ICP备16010774号&nbsp;&nbsp;&nbsp;<a href=""><img src="../img/pic/pic.gif"></a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../lib/jquery/jquery.min.js"></script>
+  <script src="../js/calendar.js"></script>
+</body>
+</html>

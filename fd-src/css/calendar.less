@@ -1,0 +1,247 @@
+@import url(config.less);
+
+.clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.c-head {
+  position: relative;
+  height: 18px;
+  line-height: 18px;
+  margin-bottom: 15px;
+  h3 {
+    &.icon {
+      padding-left: 28px;
+      background-position: left center;
+      font-weight: normal;
+    }
+  }
+}
+
+.calendar-row1 {
+  .l {
+    float: left;
+    width: 270px;
+  }
+  .r {
+    float: right;
+    width: 705px;
+    padding-top: 15px;
+    .week {
+      width: 65px;
+      float: left;
+      font-size: 16px;
+      height: 48px;
+      line-height: 48px;
+      &.week-pre {
+        text-align: right;
+        margin-right: 23px;
+        background-position: left center;
+      }
+      &.week-next {
+        margin-left: 23px;
+        background-position: right center;
+      }
+    }
+    .week-item {
+      float: left;
+      width: 75px;
+      height: 48px;
+      font-size: 16px;
+      text-align: center;
+      line-height: 24px;
+    }
+  }
+}
+
+.calendar-row2 {
+  .col {
+    float: left;
+  }
+  .col-1 {
+    width: 200px;
+    margin-right: 36px;
+  }
+  .col-2 {
+    width: 292px;
+  }
+}
+
+.searchbox{
+	font-size:0px;
+}
+
+.searchbox .textdate{
+	border:1px solid #dedede;
+	border-right:none;
+	height:28px;
+	text-align:center;
+	color:#5a5a5a;
+	width:190px;
+  padding: 0;
+  margin: 0;
+}
+
+.searchbox .buttondate{
+	height:30px;
+	font-size:12px;
+	background-color:@color;
+	display:inline-block;
+	vertical-align:top;
+	color:white;
+	line-height:30px;
+	padding:0px 13px;
+}
+
+.panel-2 {
+  .panel-head {
+    background-color: @color;
+    color: white;
+    padding: 8px 13px;
+    border-radius: 5px 5px 0px 0px;
+    .clearfix();
+    h3 {
+      float: left;
+      font-size: 16px;
+      font-weight: normal;
+    }
+    .more {
+      width: 14px;
+      height: 14px;
+      display: block;
+      float: right;
+      cursor: pointer;
+      background-position: center center;
+      position: relative;
+      top: 4px;
+    }
+  }
+  .panel-body {
+    border: 1px solid #dedede;
+    border-top: none;
+    border-radius: 0px 0px 5px 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 12px;
+    overflow: hidden;
+  }
+}
+
+.filter-list {
+  li {
+    margin-top: 12px;
+    margin-left: 4px;
+    margin-right: 4px;
+    float: left;
+    &.hide {
+      display: none
+    }
+    a {
+      display: block;
+      width: 84px;
+      text-align: center;
+      padding: 6px 0;
+      cursor: pointer;
+      font-size: 14px;
+      background: #fff;
+      color: @font-color;
+      border-radius: 3px;
+      border: 1px solid #dedede;
+      &:hover {
+        background: #f1f1f1;
+      }
+    }
+    .icon {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 3px;
+    }
+  }
+}
+
+.table-data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  thead {
+    tr {
+      background: @color;
+      th {
+        padding: 10px 0;
+        line-height: 1em;
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        padding: 10px 8px;
+        border: 1px solid @gray-border;
+        text-align: center;
+        &.tl {
+          text-align: left;
+        }
+      }
+    }
+  }
+  .xq {
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+  }
+  .shijian {
+    text-align: left;
+    img {
+      float: left;
+      display: block;
+      margin-right: 10px;
+    }
+  }
+  .yingxiang2 {
+    margin: 0;
+    width: 90px;
+    border-radius: 3px;
+    height: 24px;
+    text-align: center;
+    line-height: 23.5px;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    &.yx-wyx {
+      border-color: @color-yellow;
+      color: @color-yellow;
+    }
+    &.yx-wyx-imp {
+      border-color: @color-yellow;
+      background: @color-yellow;
+      color: #fff;
+    }
+    &.yx-liduo {
+      border-color: @color-red;
+      color: @color-red;
+    }
+    &.yx-liduo-imp {
+      border-color: @color-red;
+      background: @color-red;
+      color: #fff;
+    }
+    &.yx-likong {
+      border-color: @color-green;
+      color: @color-green;
+    }
+    &.yx-likong-imp {
+      border-color: @color-green;
+      background: @color-green;
+      color: #fff;
+    }
+  }
+}

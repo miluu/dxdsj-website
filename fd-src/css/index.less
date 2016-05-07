@@ -1,0 +1,63 @@
+@import url(config.less);
+@import url(reset.less);
+@import url(img.less);
+@import url(header.less);
+@import url(main.less);
+@import url(panel.less);
+@import url(footer.less);
+@import url(data-detail.less);
+@import url(calendar-detail.less);
+
+.checkbox {
+  display: inline-block;
+  vertical-align: middle;
+  color: @font-color-light;
+  cursor: pointer;
+  input[type=checkbox] {
+    display: none;
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 41px;
+    height: 20px;
+    background-image: url(../img/base64/checkbox-off.png);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-left: 3px;
+  }
+  &.on:after {
+    background-image: url(../img/base64/checkbox-on.png);
+  }
+}
+
+.show-time {
+  height: 40px;
+  position: relative;
+  color: @font-color-light;
+  .active-time {
+    padding-left: 30px;
+    background-position: left center;
+    cursor: pointer;
+  }
+}
+
+.selkind {
+  position: relative;
+  height: 40px;
+  margin-left: 15px;
+  .selected {
+    border: 1px solid @color-blue-light;
+    padding-left: 10px;
+    padding-right: 24px;
+    border-radius: 2px;
+    height: 25px;
+    line-height: 25px;
+    margin-top: 7px;
+    cursor: pointer;
+    background-position: right center;
+    .item {
+      color: @color-blue;
+    }
+  }
+}

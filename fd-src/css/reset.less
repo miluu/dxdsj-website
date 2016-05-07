@@ -1,0 +1,91 @@
+html, body, div, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-size: 12px;
+  font-family: @font-family;
+  color: @font-color;
+  min-width: @wrap-w;
+  line-height: 1.8em;
+  background: #fff;
+}
+
+img{
+	border:none;
+}
+
+.wrap {
+  width: @wrap-w;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: @font-color;
+  &:hover {
+    color: @color;
+  }
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.ellipsis() {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.clearfix {
+  .clearfix();
+}
+
+.clear {
+	clear: both;
+	height: 0;
+}
+
+.text-green {
+  color: @color-green;
+}
+
+.text-red {
+  color: @color-red;
+}
+
+.text-yellow {
+  color: @color-yellow;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.tc {
+  text-align: center !important;
+}
