@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "gulp clean",
-    "build": "gulp build",
+    "build": "gulp default",
+    "css": "gulp css",
+    "js": "gulp js",
+    "img": "gulp img",
     "watch": "gulp watch"
   },
   "author": "hyxiong@qq.com",
@@ -27,6 +30,7 @@
     "gulp-postcss": "^6.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.3",
+    "vinyl-named": "^1.1.0",
     "webpack": "^1.13.0",
     "webpack-stream": "^3.2.0"
   },

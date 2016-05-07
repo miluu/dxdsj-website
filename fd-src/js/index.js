@@ -1,4 +1,5 @@
 /*global $*/
+alert();
 $(function() {
   const $checkbox = $('.j-checkbox');
   $checkbox.each(function(index, el) {

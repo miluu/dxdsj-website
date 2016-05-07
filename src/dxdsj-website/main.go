@@ -17,7 +17,7 @@ import (
 )
 
 var (
-	addr        = flag.String("addr", ":30200", `Server port`)
+	addr        = flag.String("addr", ":8000", `Server port`)
 	autoToDo    = flag.Bool("auto", false, `when u modify some dir to auto restart this app`)
 	deferToAuto = flag.Duration("defer", time.Second, `defer to when u modify some file`)
 	appName     = filepath.Base(os.Args[0])

@@ -40,7 +40,7 @@ gulp.task('css', function() {
     }))
     .pipe(spriter({
       includeMode: 'explicit',
-      spriteSheet: path.resolve(IMG_PATH, 'build/img/sprite/sprite.png'),
+      spriteSheet: path.resolve(SPRITE_PATH, 'sprite.png'),
       pathToSpriteSheetFromCSS: '../img/sprite/sprite.png?' + timestamp,
       spritesmithOptions: {
         padding: 10
@@ -64,7 +64,7 @@ gulp.task('js', function() {
     ])
     .pipe(named())
     .pipe(webpack(webpackConfig))
-    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest(JS_PATH))
     .pipe(rename(function(path) {
       path.basename += '.min';
     }))
@@ -79,7 +79,7 @@ gulp.task('clean', function() {
 
 gulp.task('default', ['img', 'css', 'js']);
 
-gulp.task('watch', ['build'], function() {
+gulp.task('watch', ['default'], function() {
   gulp.watch('fd-src/img/**/*', ['img']);
   gulp.watch('fd-src/css/**/*', ['css']);
   gulp.watch('fd-src/js/**/*', ['js']);
