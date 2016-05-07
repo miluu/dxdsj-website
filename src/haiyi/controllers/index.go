@@ -7,6 +7,8 @@ import (
 	"labix.org/v2/mgo/bson"
 	"net/http"
 	"strconv"
+	"strings"
+	"time"
 )
 
 type PageIndex struct {
@@ -39,10 +41,24 @@ func (p *PageIndex) RouteLivenewsDetail(rw http.ResponseWriter, r *http.Request)
 	return false
 }
 
-func (p *PageIndex) RouteCalendar() {
+func (p *PageIndex) RouteCalendar(rw http.ResponseWriter, r *http.Request) {
+	dateStr := strings.TrimSpace(r.URL.Query().Get("date"))
+	if dateStr == "" {
+		dateStr = time.Now().Format("2006-01-02")
+	}
+	query := bson.M{"localDateTime": bson.M{"$regex": bson.RegEx{dateStr, ""}}}
+	countryStr := strings.TrimSpace(r.URL.Query().Get("country"))
+	query["country"] = bson.M{"$regex": bson.RegEx{countryStr, ""}}
+	importanceStr := strings.TrimSpace(r.URL.Query().Get("importance"))
+	if importanceStr == "true" {
+		query["importance"] = bson.M{"$gt": 1}
+	}
+	list, _ := GetCalendarList(query, p.dbCol.colCalendar.C())
+	p.templateData["CalendarList"] = list
+	p.templateData["Date"] = dateStr
 }
 
-func (p *PageIndex) RouteCalendarDetail() {
+func (p *PageIndex) RouteCalendarDetail(rw http.ResponseWriter, r *http.Request) {
 }
 
 func (p *PageIndex) RouteApiLivenews(rw http.ResponseWriter, r *http.Request) (b bool) {

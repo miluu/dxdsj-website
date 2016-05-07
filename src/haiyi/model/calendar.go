@@ -47,37 +47,9 @@ type CalendarData struct {
 	Results []ModelCalendar `bson:"results" json:"results"`
 }
 
-func SaveCalendar(m ModelCalendar, col *mgo.Collection) error {
-	id := m.OriginalId
-	query := bson.M{"id": id}
-	if n, err := col.Find(query).Count(); err != nil {
-		return err
-	} else if n > 0 {
-		change := bson.M{
-			"timestamp":     m.Timestamp,
-			"localDateTime": m.LocalDateTime,
-			"importance":    m.Importance,
-			"title":         m.Title,
-			"forecast":      m.Forecast,
-			"actual":        m.Actual,
-			"previous":      m.Previous,
-			"revised":       m.Revised,
-			"category_id":   m.CategoryId,
-			"relatedAssets": m.RelatedAssets,
-			"remark":        m.Remark,
-			"mark":          m.Mark,
-			"underline":     m.Underline,
-			"accurateFlag":  m.AccurateFlag,
-			"level":         m.Level,
-			"country":       m.Country,
-			"currency":      m.Currency,
-			"calendarType":  m.CalendarType,
-			"description":   m.Description,
-		}
-		err := col.Update(query, bson.M{"$set": change})
-		return err
-	}
-	m.Id = bson.NewObjectId()
-	err := col.Insert(m)
-	return err
+func GetCalendarList(query bson.M, col *mgo.Collection) (list []ModelCalendar, err error) {
+	query["del"] = false
+	sorter := "-timestamp"
+	err = col.Find(query).Sort(sorter).All(&list)
+	return
 }

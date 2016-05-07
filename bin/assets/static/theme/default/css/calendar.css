@@ -50,6 +50,10 @@
 	line-height: 24px;
 }
 
+.calendar-row1 .r .week-item.active a {
+	color: #f00;
+}
+
 .calendar-row2 .col {
 	float: left;
 }
@@ -218,6 +222,7 @@
 	line-height: 23.5px;
 	font-size: 12px;
 	border: 1px solid #ddd;
+	font-weight: normal;
 	display: inline-block;
 }
 

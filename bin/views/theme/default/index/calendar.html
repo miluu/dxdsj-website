@@ -27,7 +27,6 @@
   </div>
 
   <div class="clearfix" style="height: 40px;"></div>
-
   <div class="content wrap">
     <div class="calendar-row1 clearfix">
       <div class="l">
@@ -36,59 +35,59 @@
         </div>
         <div class="c-body">
           <div class="searchbox">
-            <input id="searchbox" name="searchbox" readonly="readonly" type="text" class="textdate" onclick="WdatePicker({dateFmt:'yyyy年MM月dd日',onpicked:toDate})" value="2016年05月05日">
+            <input id="searchbox" name="searchbox" readonly="readonly" type="text" class="textdate" onclick="WdatePicker({dateFmt:'yyyy年MM月dd日',onpicked:toDate})" value="{{.Date}}">
             <div class="buttondate" onclick="WdatePicker({el:'searchbox',dateFmt:'yyyy年MM月dd日',onpicked:toDate})">选择日期</div>
           </div>
         </div>
       </div>
       <div class="r">
         <div class="week week-pre icon-arr-left">
-          <a href="">上一周</a>
+          <a class="j-preweek" href="">上一周</a>
         </div>
         <div class="week-item">
-          <a href="">
+          <a class="j-w1" href="">
             <span>周一</span><br>
-            <span>05/02</span>
+            <span class="j-weekdate">--/--</span>
           </a>
         </div>
         <div class="week-item">
-          <a href="">
+          <a class="j-w2" href="">
             <span>周二</span><br>
-            <span>05/02</span>
+            <span class="j-weekdate">--/--</span>
           </a>
         </div>
         <div class="week-item">
-          <a href="">
+          <a class="j-w3" href="">
             <span>周三</span><br>
-            <span>05/02</span>
+            <span class="j-weekdate">--/--</span>
           </a>
         </div>
         <div class="week-item">
-          <a href="">
+          <a class="j-w4" href="">
             <span>周四</span><br>
-            <span>05/02</span>
+            <span class="j-weekdate">--/--</span>
           </a>
         </div>
         <div class="week-item">
-          <a href="">
+          <a class="j-w5" href="">
             <span>周五</span><br>
-            <span>05/02</span>
+            <span class="j-weekdate">--/--</span>
           </a>
         </div>
         <div class="week-item">
-          <a href="">
+          <a class="j-w6" href="">
             <span>周六</span><br>
-            <span>05/02</span>
+            <span class="j-weekdate">--/--</span>
           </a>
         </div>
         <div class="week-item">
-          <a href="">
+          <a class="j-w7" href="">
             <span>周日</span><br>
-            <span>05/02</span>
+            <span class="j-weekdate">--/--</span>
           </a>
         </div>
         <div class="week week-next icon-arr-right">
-          <a href="">上一周</a>
+          <a class="j-nextweek" href="">下一周</a>
         </div>
       </div>
     </div>
@@ -105,17 +104,17 @@
           <div class="panel-body">
             <ul class="filter-list j-filter-list">
               <li>
-                <a href=""><span class="icon icon-all"></span>全部</a>
+                <a href="/calendar?date={{.Date}}"><span class="icon icon-all"></span>全部</a>
               </li>
               <li>
-                <a href=""><span class="icon icon-imp"></span>重要</a>
+                <a href="/calendar?date={{.Date}}&importance=true"><span class="icon icon-imp"></span>重要</a>
               </li>
-              <li class="j-hide hide">
+              <!-- <li class="j-hide hide">
                 <a href=""><span class="icon icon-today"></span>今日</a>
               </li>
               <li class="j-hide hide">
                 <a href=""><span class="icon icon-will"></span>未公布</a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -127,10 +126,10 @@
           <div class="panel-body">
             <ul class="filter-list j-filter-list">
               <li>
-                <a href=""><span class="icon icon-meiguo"></span>美国</a>
+                <a href="/calendar?date={{.Date}}&country=美国"><span class="icon icon-meiguo"></span>美国</a>
               </li>
               <li>
-                <a href=""><span class="icon icon-janada"></span>加拿大</a>
+                <a href="/calendar?date={{.Date}}&country=加拿大"><span class="icon icon-janada"></span>加拿大</a>
               </li>
             </ul>
           </div>
@@ -143,25 +142,25 @@
           <div class="panel-body">
             <ul class="filter-list j-filter-list">
               <li>
-                <a href=""><span class="icon icon-ouyuanqu"></span>欧元区</a>
+                <a href="/calendar?date={{.Date}}&country=欧元区"><span class="icon icon-ouyuanqu"></span>欧元区</a>
               </li>
               <li>
-                <a href=""><span class="icon icon-deguo"></span>德国</a>
+                <a href="/calendar?date={{.Date}}&country=德国"><span class="icon icon-deguo"></span>德国</a>
               </li>
               <li class="j-hide hide">
-                <a href=""><span class="icon icon-yingguo"></span>英国</a>
+                <a href="/calendar?date={{.Date}}&country=英国"><span class="icon icon-yingguo"></span>英国</a>
               </li>
               <li class="j-hide hide">
-                <a href=""><span class="icon icon-faguo"></span>法国</a>
+                <a href="/calendar?date={{.Date}}&country=法国"><span class="icon icon-faguo"></span>法国</a>
               </li>
               <li class="j-hide hide">
-                <a href=""><span class="icon icon-ruishi"></span>瑞士</a>
+                <a href="/calendar?date={{.Date}}&country=瑞士"><span class="icon icon-ruishi"></span>瑞士</a>
               </li>
               <li class="j-hide hide">
-                <a href=""><span class="icon icon-yidali"></span>意大利</a>
+                <a href="/calendar?date={{.Date}}&country=意大利"><span class="icon icon-yidali"></span>意大利</a>
               </li>
               <li class="j-hide hide">
-                <a href=""><span class="icon icon-xibanya"></span>西班牙</a>
+                <a href="/calendar?date={{.Date}}&country=西班牙"><span class="icon icon-xibanya"></span>西班牙</a>
               </li>
             </ul>
           </div>
@@ -174,28 +173,28 @@
           <div class="panel-body">
             <ul class="filter-list j-filter-list">
               <li>
-                <a href=""><span class="icon icon-zhongguo"></span>中国</a>
+                <a href="/calendar?date={{.Date}}&country=中国"><span class="icon icon-zhongguo"></span>中国</a>
               </li>
               <li>
-                <a href=""><span class="icon icon-aodaliya"></span>澳大利亚</a>
+                <a href="/calendar?date={{.Date}}&country=澳大利亚"><span class="icon icon-aodaliya"></span>澳大利亚</a>
               </li>
               <li>
-                <a href=""><span class="icon icon-riben"></span>日本</a>
+                <a href="/calendar?date={{.Date}}&country=日本"><span class="icon icon-riben"></span>日本</a>
               </li>
               <li class="j-hide hide">
-                <a href=""><span class="icon icon-hanguo"></span>韩国</a>
+                <a href="/calendar?date={{.Date}}&country=韩国"><span class="icon icon-hanguo"></span>韩国</a>
               </li>
               <li class="j-hide hide">
-                <a href=""><span class="icon icon-xinxilan"></span>新西兰</a>
+                <a href="/calendar?date={{.Date}}&country=新西兰"><span class="icon icon-xinxilan"></span>新西兰</a>
               </li>
               <li class="j-hide hide">
-                <a href=""><span class="icon icon-yindu"></span>印度</a>
+                <a href="/calendar?date={{.Date}}&country=印度"><span class="icon icon-yindu"></span>印度</a>
               </li>
               <li class="j-hide hide">
-                <a href=""><span class="icon icon-xianggang"></span>香港</a>
+                <a href="/calendar?date={{.Date}}&country=香港"><span class="icon icon-xianggang"></span>香港</a>
               </li>
               <li class="j-hide hide">
-                <a href=""><span class="icon icon-taiwan"></span>台湾地区</a>
+                <a href="/calendar?date={{.Date}}&country=台湾"><span class="icon icon-taiwan"></span>台湾地区</a>
               </li>
             </ul>
           </div>
@@ -204,7 +203,7 @@
     </div>
     <div class="calendar-row2 clearfix mt20">
       <div class="c-head">
-        <h3 class="icon icon-date">2016-05-05 经济数据一览</h3>
+        <h3 class="icon icon-date">{{.Date}} 经济数据一览</h3>
       </div>
       <div class="c-body">
         <table class="table-data">
@@ -222,124 +221,37 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>07:01</td>
-              <td><img src="{{._IMG_PATH}}/pic/gq/中国.png" alt="中国"></td>
-              <td class="tl">英国4月BRC商店物价指数年率</td>
-              <td><img src="{{._IMG_PATH}}/pic/star3.png"></td>
-              <td>-1.7%</td>
-              <td>-1.7%</td>
-              <td>-1.7%</td>
-              <td><span class="yingxiang2 yx-wyx">影响较小</span></td>
-              <td><a href="" class="xq icon-news"></a></td>
+            {{range .CalendarList}}
+            {{if eq .CalendarType "FD"}}
+            <tr data-timestamp="{{.Timestamp}}"
+              data-timestr="{{.LocalDateTime}}"
+              {{if ge .Importance 2}}class="text-red"{{end}}
+              {{if eq .Importance 3}}style="font-weight: bold;"{{end}}
+            >
+              <td class="j-showtime">--:--</td>
+              <td><img src="{{$._IMG_PATH}}/pic/gq/{{.Country}}.png" alt="{{.Country}}"></td>
+              <td class="tl">{{.Title}}</td>
+              <td><img src="{{$._IMG_PATH}}/pic/star{{.Importance}}.png"></td>
+              <td>{{.Previous}}</td>
+              <td>{{.Forecast}}</td>
+              <td>{{.Actual}}</td>
+              <td>
+                <span class="yingxiang2 yx-liduo">利多 金银</span>
+              </td>
+              <td><a href="/calendar-detail" class="xq icon-news"></a></td>
             </tr>
-            <tr>
-              <td class="text-red">07:01</td>
-              <td><img src="{{._IMG_PATH}}/pic/gq/中国.png" alt="中国"></td>
-              <td class="tl text-red">英国4月BRC商店物价指数年率</td>
-              <td><img src="{{._IMG_PATH}}/pic/star3.png"></td>
-              <td class="text-red">-1.7%</td>
-              <td class="text-red">-1.7%</td>
-              <td class="text-red">-1.7%</td>
-              <td class="text-red"><span class="yingxiang2 yx-wyx-imp">影响较小</span></td>
-              <td><a href="" class="xq icon-news-red"></a></td>
-            </tr>
-            <tr>
-              <td>07:01</td>
-              <td><img src="{{._IMG_PATH}}/pic/gq/中国.png" alt="中国"></td>
-              <td class="tl">英国4月BRC商店物价指数年率</td>
-              <td><img src="{{._IMG_PATH}}/pic/star3.png"></td>
-              <td>-1.7%</td>
-              <td>-1.7%</td>
-              <td>-1.7%</td>
-              <td><span class="yingxiang2 yx-likong">利空 英镑 金银</span></td>
-              <td><a href="" class="xq icon-news"></a></td>
-            </tr>
-            <tr>
-              <td>07:01</td>
-              <td><img src="{{._IMG_PATH}}/pic/gq/中国.png" alt="中国"></td>
-              <td class="tl">英国4月BRC商店物价指数年率</td>
-              <td><img src="{{._IMG_PATH}}/pic/star3.png"></td>
-              <td>-1.7%</td>
-              <td>-1.7%</td>
-              <td>-1.7%</td>
-              <td><span class="yingxiang2 yx-liduo">利多 英镑 </span></td>
-              <td><a href="" class="xq icon-news"></a></td>
-            </tr>
+            {{end}}
+            {{end}}
+              <tr class="j-nodata" style="display: none;">
+                <td colspan="9">暂无数据</td>
+              </tr>
           </tbody>
         </table>
       </div>
     </div>
     <div class="calendar-row2 clearfix mt20">
       <div class="c-head">
-        <h3 class="icon icon-mic">2016-05-05 财经大事一览</h3>
-      </div>
-      <div class="c-body">
-        <table class="table-data">
-          <thead>
-            <tr>
-              <th width="50">时间</th>
-              <th width="100">国家/地区</th>
-              <th width="100">城市</th>
-              <th width="100">重要性</th>
-              <th>事件</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>07:01</td>
-              <td>美国</td>
-              <td>罗契斯特</td>
-              <td><img src="{{._IMG_PATH}}/pic/star3.png"></td>
-              <td>
-                <div class="clearfix shijian">
-                  <img src="{{._IMG_PATH}}/pic/维斯科.png" width="40" height="40">
-                  <p>The State of the Union 2016年年会召开，意大利央行行长维斯科、欧盟委员会主席容克、欧洲理事会主席图斯克及欧洲议会议长舒尔茨将参加。</p>
-                </div>
-              </td>
-            </tr>
-            <tr class="text-red">
-              <td class="text-red">07:01</td>
-              <td>美国</td>
-              <td>罗契斯特</td>
-              <td><img src="{{._IMG_PATH}}/pic/star3.png"></td>
-              <td>
-                <div class="clearfix shijian">
-                  <img src="{{._IMG_PATH}}/pic/维斯科.png" width="40" height="40">
-                  <p>The State of the Union 2016年年会召开，意大利央行行长维斯科、欧盟委员会主席容克、欧洲理事会主席图斯克及欧洲议会议长舒尔茨将参加。</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>07:01</td>
-              <td>美国</td>
-              <td>罗契斯特</td>
-              <td><img src="{{._IMG_PATH}}/pic/star3.png"></td>
-              <td>
-                <div class="clearfix shijian">
-                  <img src="{{._IMG_PATH}}/pic/维斯科.png" width="40" height="40">
-                  <p>The State of the Union 2016年年会召开，意大利央行行长维斯科、欧盟委员会主席容克、欧洲理事会主席图斯克及欧洲议会议长舒尔茨将参加。</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>07:01</td>
-              <td>美国</td>
-              <td>罗契斯特</td>
-              <td><img src="{{._IMG_PATH}}/pic/star3.png"></td>
-              <td>
-                <div class="clearfix shijian">
-                  <img src="{{._IMG_PATH}}/pic/维斯科.png" width="40" height="40">
-                  <p>The State of the Union 2016年年会召开，意大利央行行长维斯科、欧盟委员会主席容克、欧洲理事会主席图斯克及欧洲议会议长舒尔茨将参加。</p>
-                </div>
-              </td>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="calendar-row2 clearfix mt20">
-      <div class="c-head">
-        <h3 class="icon icon-mic">2016-05-05 假期休市一览</h3>
+        <h3 class="icon icon-mic">{{.Date}} 财经大事一览</h3>
       </div>
       <div class="c-body">
         <table class="table-data">
@@ -347,39 +259,74 @@
             <tr>
               <th width="100">时间</th>
               <th width="100">国家/地区</th>
-              <th width="150">市场</th>
-              <th width="100">节日名称</th>
+              <!-- <th width="100">城市</th> -->
+              <th width="100">重要性</th>
+              <th>事件</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{range .CalendarList}}
+            {{if eq .CalendarType "FE"}}
+            <tr data-timestamp="{{.Timestamp}}"
+              data-timestr="{{.LocalDateTime}}"
+              {{if ge .Importance 2}}class="text-red"{{end}}
+              {{if eq .Importance 3}}style="font-weight: bold;"{{end}}
+            >
+              <td  class="j-showtime">--:--</td>
+              <td>{{.Country}}</td>
+              <!-- <td>罗契斯特</td> -->
+              <td><img src="{{$._IMG_PATH}}/pic/star{{.Importance}}.png"></td>
+              <td class="tl">
+                <!--<div class="clearfix shijian">
+                  <img src="{{$._IMG_PATH}}/pic/维斯科.png" width="40" height="40">
+                  <p>The State of the Union 2016年年会召开，意大利央行行长维斯科、欧盟委员会主席容克、欧洲理事会主席图斯克及欧洲议会议长舒尔茨将参加。</p>
+                </div>-->
+                {{.Title}}
+              </td>
+            </tr>
+            {{end}}
+            {{end}}
+            <tr class="j-nodata" style="display: none;">
+              <td colspan="4">暂无数据</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="calendar-row2 clearfix mt20">
+      <div class="c-head">
+        <h3 class="icon icon-mic">{{.Date}} 假期休市一览</h3>
+      </div>
+      <div class="c-body">
+        <table class="table-data">
+          <thead>
+            <tr>
+              <th width="100">时间</th>
+              <th width="100">国家/地区</th>
+              <!-- <th width="150">市场</th> -->
+              <!-- <th width="100">节日名称</th> -->
               <th>详细安排</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>05-05</td>
-              <td>美国</td>
-              <td>东京证券交易所</td>
-              <td>儿童节</td>
-              <td class="tl">休市一日</td>
+            {{range .CalendarList}}
+            {{if eq .CalendarType "VN"}}
+            <tr data-timestamp="{{.Timestamp}}"
+              data-timestr="{{.LocalDateTime}}"
+              {{if ge .Importance 2}}class="text-red"{{end}}
+              {{if eq .Importance 3}}style="font-weight: bold;"{{end}}
+            >
+              <td class="j-showdate">-----</td>
+              <td>{{.Country}}</td>
+              <!-- <td>东京证券交易所</td> -->
+              <!-- <td>儿童节</td> -->
+              <td class="tl">{{.Title}}</td>
             </tr>
-            <tr class="text-red">
-              <td class="text-red">05-05</td>
-              <td>美国</td>
-              <td>东京证券交易所</td>
-              <td>儿童节</td>
-              <td class="tl">休市一日</td>
+            {{end}}
+            {{end}}
+            <tr class="j-nodata" style="display: none;">
+              <td colspan="3">暂无数据</td>
             </tr>
-            <tr>
-              <td>05-05</td>
-              <td>美国</td>
-              <td>东京证券交易所</td>
-              <td>儿童节</td>
-              <td class="tl">休市一日</td>
-            </tr>
-            <tr>
-              <td>05-05</td>
-              <td>美国</td>
-              <td>东京证券交易所</td>
-              <td>儿童节</td>
-              <td class="tl">休市一日</td>
           </tbody>
         </table>
       </div>
@@ -397,8 +344,11 @@
       </div>
     </div>
   </div>
-
+  <script>
+    var __queryDate = "{{.Date}}";
+  </script>
   <script src="{{._ADDON_PATH}}/jquery/jquery.min.js"></script>
+  <script src="{{._ADDON_PATH}}/moment/moment.min.js"></script>
   <script src="{{._JS_PATH}}/calendar.js"></script>
 </body>
 </html>

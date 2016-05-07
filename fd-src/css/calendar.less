@@ -54,6 +54,11 @@
       font-size: 16px;
       text-align: center;
       line-height: 24px;
+      &.active {
+        a {
+          color: @color-red;
+        }
+      }
     }
   }
 }
@@ -215,6 +220,7 @@
     line-height: 23.5px;
     font-size: 12px;
     border: 1px solid #ddd;
+    font-weight: normal;
     display: inline-block;
     &.yx-wyx {
       border-color: @color-yellow;
