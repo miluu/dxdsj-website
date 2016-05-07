@@ -20,9 +20,11 @@ type Config struct {
 }
 
 type dbCol struct {
-	colModule *mongo.Collection
-	colRole   *mongo.Collection
-	colUser   *mongo.Collection
+	colModule   *mongo.Collection
+	colRole     *mongo.Collection
+	colUser     *mongo.Collection
+	colLivenews *mongo.Collection
+	colCalendar *mongo.Collection
 }
 
 type App struct {
@@ -51,7 +53,7 @@ func (a *App) SetOffRight(right bool) {
 	a.offRight = right
 }
 
-func (a *App) InitDb(mod, ro, ur *mongo.Collection) {
+func (a *App) InitDb(mod, ro, ur, livenews, calendar *mongo.Collection) {
 	if a.dbCol == nil {
 		a.dbCol = &dbCol{}
 	}
@@ -59,6 +61,8 @@ func (a *App) InitDb(mod, ro, ur *mongo.Collection) {
 	a.dbCol.colModule = mod
 	a.dbCol.colRole = ro
 	a.dbCol.colUser = ur
+	a.dbCol.colLivenews = livenews
+	a.dbCol.colCalendar = calendar
 }
 
 func (a *App) RenderBody(data interface{}) {

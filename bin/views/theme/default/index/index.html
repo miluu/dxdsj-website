@@ -12,19 +12,18 @@
   <div class="header">
     <div class="wrap">
       <div class="logo">
-        <a href="">
+        <a href="/index">
           <img src="{{._IMG_PATH}}/pic/logo.png">
         </a>
       </div>
       <div class="nav">
         <ul>
-          <li class="active"><a href="/html/index.html">首　页</a></li>
-          <li><a href="/html/calendar.html">财经日历</a></li>
+          <li class="active"><a href="/index">首　页</a></li>
+          <li><a href="/calendar">财经日历</a></li>
         </ul>
       </div>
     </div>
   </div>
-
   <div class="top">
     <div class="wrap">
       <div class="banner">
@@ -69,7 +68,6 @@
       </div>
     </div>
   </div>
-
   <div class="content wrap">
     <div class="main">
       <div class="main-head">
@@ -80,158 +78,63 @@
           </label>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <label class="checkbox j-checkbox">
-            <span>声音提示</span>
+            <span>桌面通知</span>
             <input type="checkbox" name="">
           </label>
         </div>
         <div class="fr">
           <div class="show-time fl">
             <div class="active-time icon-beijing">
-              <span class="time">2016-05-04 20:57:20 星期三</span>
+              <span class="time j-clocktime"></span>
             </div>
           </div>
-          <div class="selkind fl">
+          <!--<div class="selkind fl">
             <div class="selected icon-arr-down">
               <span class="item">金银</span>
               <span class="item">瑞郎</span>
             </div>
-          </div>
+          </div>-->
         </div>
       </div>
       <div class="main-body">
-        <div class="main-list">
-          <div class="item">
+        <div class="main-list j-main-list">
+          {{range .LivenewsList}}
+          <div class="item {{if gt .Importance 1}}imp{{end}}" {{if eq .Importance 3}}style="font-weight: bold;"{{end}}
+            data-created-at="{{.CreatedAt}}"
+          >
             <div class="col-icon">
-              <a href="/html/data-detail.html" title="查看详情">
-                <span class="icon icon-news"></span>
+              <a href="/livenews-detail?id={{.Id.Hex}}" title="查看详情" target="_blank">
+                <span class="icon icon-news{{if gt .Importance 1}}-red{{end}}"></span>
               </a>
             </div>
             <div class="col-time">
-              <span class="time">21:04</span>
+              <span class="time j-unixtime" data-unix="{{.CreatedAt}}">
+                --:--
+              </span>
             </div>
+            {{$len := len .ImageUrls}}
+            {{if eq $len 0}}
             <div class="col-summary">
-              <p class="summary">
-                【股市】标普500指数5月4日（周三）开盘下跌9.97点，跌幅0.48%，报2053.4点；<br>
-                【股市】纳斯达克指数5月4日（周三）开盘下跌27.96点，跌幅0.59%，报4735.27点；<br>
-                【股市】道琼斯指数5月4日（周三）开盘下跌62.94点，跌幅0.35%，报17687.97点。<br>
-              </p>
+              <div class="summary">
+                {{.ContentHtml}}
+              </div>
             </div>
-          </div>
-          <div class="item">
-            <div class="col-icon">
-              <a href="/html/data-detail.html" title="查看详情">
-                <span class="icon icon-news"></span>
-              </a>
-            </div>
-            <div class="col-time">
-              <span class="time">21:04</span>
-            </div>
+            {{else}}
             <div class="col-img-summary">
-              <p class="summary">
-                <b>【推荐阅读】“新兴市场教父”看多中国大宗商品：已经大举进入！ 链接→→</b><br>
-                据外媒报道，“新兴市场教父”麦朴思认为，中国大宗商品超跌反弹后上涨潜力很大，因而正在买入中国的大宗商品股。麦朴思表示，市场在波动中上涨的趋势不会改变。
-              </p>
+              <div class="summary">
+                {{.ContentHtml}}
+              </div>
             </div>
             <div class="col-img">
-              <a href="">
-                <img src="{{._IMG_PATH}}/pic/newspic.jpg">
+              <a href="/livenews-detail?id={{.Id.Hex}}" target="_blank">
+                <img src="{{$._IMG_PATH}}/newspics/{{index .ImageUrls 0}}">
               </a>
             </div>
+            {{end}}
           </div>
-          <div class="item imp">
-            <div class="col-icon">
-              <a href="/html/data-detail.html" title="查看详情">
-                <span class="icon icon-news-red"></span>
-              </a>
-            </div>
-            <div class="col-time">
-              <span class="time">21:04</span>
-            </div>
-            <div class="col-summary">
-              <p class="summary">
-                【每周EIA竞猜活动 红包送送送】目前已有2690人参加EIA竞猜活动，竞猜均值为增加167.68万桶，金十数据每周数千元现金红包大放送，赶快参加领红包吧；分享有奖哦！
-              </p>
-            </div>
-          </div>
-          <div class="item">
-            <div class="col-icon">
-              <a href="/html/data-detail.html">
-                <span class="icon icon-data"></span>
-              </a>
-            </div>
-            <div class="col-time">
-              <span class="time">20:50:46</span>
-            </div>
-            <div class="col-summary">
-              <table class="data-table">
-                <tr>
-                  <td width="60">
-                    <img src="{{._IMG_PATH}}/pic/美国.png">
-                  </td>
-                  <td width="64">
-                    <span class="time">20:15</span>
-                  </td>
-                  <td width="185">
-                    <p>美国4月ADP就业人数(万人)</p>
-                    <p>前值：20 预期：19.6</p>
-                    <p>修正：19.4（前值）</p>
-                  </td>
-                  <td width="48">
-                    <img src="{{._IMG_PATH}}/pic/lv3.png">
-                  </td>
-                  <td width="100">
-                    <span class="actual">实际：15.6</span>
-                  </td>
-                  <td>
-                    <div class="yingxiang liduo text-red">
-                      <span>利多</span>
-                      <span>金银</span>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <div class="item imp">
-            <div class="col-icon">
-              <a href="/html/data-detail.html">
-                <span class="icon icon-data-red"></span>
-              </a>
-            </div>
-            <div class="col-time">
-              <span class="time">20:50:46</span>
-            </div>
-            <div class="col-summary">
-              <table class="data-table">
-                <tr>
-                  <td width="60">
-                    <img src="{{._IMG_PATH}}/pic/美国.png">
-                  </td>
-                  <td width="64">
-                    <span class="time">20:15</span>
-                  </td>
-                  <td width="185">
-                    <p>美国4月ADP就业人数(万人)</p>
-                    <p>前值：20 预期：19.6</p>
-                    <p>修正：19.4（前值）</p>
-                  </td>
-                  <td width="48">
-                    <img src="{{._IMG_PATH}}/pic/lv3.png">
-                  </td>
-                  <td width="100">
-                    <span class="actual">实际：15.6</span>
-                  </td>
-                  <td>
-                    <div class="yingxiang liduo-imp text-white">
-                      <span>利多</span>
-                      <span>金银</span>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
+          {{end}}
         </div>
+        <a class="main-list-more j-main-list-more">加载更多</a>
       </div>
     </div>
 
@@ -331,7 +234,8 @@
   </div>
 
   <script src="{{._ADDON_PATH}}/jquery/jquery.min.js"></script>
+  <script src="{{._ADDON_PATH}}/lodash/lodash.min.js"></script>
   <script src="{{._ADDON_PATH}}/moment/moment.min.js"></script>
-  <script src="{{._JS_PATH}}/index.js"></script>
+  <script src="{{._JS_PATH}}/index.min.js"></script>
 </body>
 </html>

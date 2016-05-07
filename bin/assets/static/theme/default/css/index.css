@@ -531,6 +531,10 @@ a:hover {
 	text-align: right;
 }
 
+.main-list .item .col-img img {
+	width: 100%;
+}
+
 .main-list .item .data-table {
 	width: 100%;
 }
@@ -546,6 +550,21 @@ a:hover {
 	line-height: 24px;
 	text-align: center;
 	font-size: 14px;
+}
+
+.main-list-more {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border: 1px solid #ddd;
+	margin-top: 10px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.main-list-more:hover {
+	background: #f8f8f8;
 }
 
 .panel {

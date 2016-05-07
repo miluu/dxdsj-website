@@ -58,7 +58,7 @@ gulp.task('css', function() {
 gulp.task('js', function() {
   return gulp.src([
       'fd-src/js/index.js',
-      'fd-src/js/data-detail.js',
+      'fd-src/js/livenews-detail.js',
       'fd-src/js/calendar.js',
       'fd-src/js/calendar-detail.js'
     ])

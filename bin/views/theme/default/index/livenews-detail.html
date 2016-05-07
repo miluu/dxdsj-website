@@ -6,40 +6,44 @@
   <meta name="description" content="描述">
   <link href="favicon.ico" type="image/x-icon" rel="icon">
   <link rel="stylesheet" href="{{._CSS_PATH}}/index.css">
-  <title>data-detail</title>
+  <title>livenews-detail</title>
 </head>
 <body>
   <div class="header">
     <div class="wrap">
       <div class="logo">
-        <a href="">
+        <a href="/index">
           <img src="{{._IMG_PATH}}/pic/logo.png">
         </a>
       </div>
       <div class="nav">
         <ul>
-          <li class="active"><a href="/html/index.html">首　页</a></li>
-          <li><a href="/html/calendar.html">财经日历</a></li>
+          <li class="active"><a href="/index">首　页</a></li>
+          <li><a href="/calendar">财经日历</a></li>
         </ul>
       </div>
     </div>
   </div>
   <div class="clearfix" style="height: 40px;"></div>
+  {{with .Livenews}}
   <div class="content wrap">
     <div class="main">
       <div class="data-detail">
         <div class="detail-head">
-          <h3>一季度末中国互联网众筹规模至少20亿元</h3>
-          <h4 class="icon-time">2016-05-04 22:06:33</h4>
+          <h3>{{.Title}}</h3>
+          <h4 class="icon-time" data-unix="{{.CreatedAt}}"></h4>
         </div>
         <div class="detail-body">
-          <p>【金十图示：EIA预期从何而来？】国际不同金融机构针对不同类型数据会展开独立的预期调查，此次数据路透预期为：+169.5万，彭博预期：+55.6万；金十数据秉承独立、客观、第三方的原则发布资讯，网站发布所有数据（含前值、预期值与公布值）均引自路透社，路透金融终端显示本次参与EIA原油库存预测机构共8家，去掉最高与最低两组，其余6组均值+169.5万桶，即为4月29日当周EIA原油库存预期值。金十数据的数据解读是计算机自动获取并通过程序运算进行的理论性解读，不代表实际行情走向，敬请留意。</p>
+          {{.ContentHtml}}
+          {{range .ImageUrls}}
           <p>
-            <img src="{{._IMG_PATH}}/pic/1462370738.png">
+            <img src="{{$._IMG_PATH}}/newspics/{{.}}">
           </p>
+          {{end}}
         </div>
       </div>
     </div>
+    {{end}}
 
     <div class="sidebar">
       <div class="banner">
@@ -64,7 +68,6 @@
       </div>
     </div>
   </div>
-
   <div class="footer">
     <div class="wrap">
       <div class="logo">
@@ -76,5 +79,8 @@
       </div>
     </div>
   </div>
+  <script src="{{._ADDON_PATH}}/jquery/jquery.min.js"></script>
+  <script src="{{._ADDON_PATH}}/moment/moment.min.js"></script>
+  <script src="{{._JS_PATH}}/livenews-detail.min.js"></script>
 </body>
 </html>

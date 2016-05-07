@@ -6,6 +6,9 @@ module.exports = {
       query: {
         presets: ['es2015']
       }
+    }, {
+      test: /\.tpl/,
+      loader: 'html'
     }]
   },
   devtool: 'inline-source-map'

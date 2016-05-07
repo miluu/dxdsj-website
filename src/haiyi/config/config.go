@@ -9,7 +9,6 @@ type BaseCfg struct {
 	AssetsDirectory string `json:"AssetsDirectory"`
 	StaticDirectory string `json:"StaticDirectory"`
 	CheckRight      bool   `json:"CheckRight"`
-	QQErrDescList   string `json:"QQErrDescList"`
 }
 
 type LogCfg struct {

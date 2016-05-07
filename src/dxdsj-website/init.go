@@ -47,6 +47,8 @@ func init() {
 		monAdmin.C(ColModule),
 		monAdmin.C(ColRole),
 		monAdmin.C(ColUser),
+		mon.C(ColLivenews),
+		mon.C(ColCalendar),
 	)
 
 	for _, tfile := range strings.Split(conf.TemplateFile, "|") {
